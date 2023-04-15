@@ -8,7 +8,7 @@ Services are injectable classes that allow us to perform reusable logic. This ap
 
 ## Create a Service
 
-To create a service, we can use the [CLI](/docs/cli/cli-what-is-cli) to automatically generate a service file with boilerplate code, or we can manually create a file and write the code from scratch.
+To create a service, we can use the [CLI](../cli/cli-what-is-cli) to automatically generate a service file with boilerplate code, or we can manually create a file and write the code from scratch.
 
 The following code is an example of working service code, but it does not yet include any functions.
 

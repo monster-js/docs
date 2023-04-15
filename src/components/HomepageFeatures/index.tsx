@@ -11,21 +11,21 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Easy to Use',
-    imageUrl: '/img/monster-1-128.png',
+    imageUrl: 'img/monster-1-128.png',
     description: (
       <>This framework is built to be simple, easy to understand, and easy to use.</>
     ),
   },
   {
     title: 'Component-Based',
-    imageUrl: '/img/monster-2-128.png',
+    imageUrl: 'img/monster-2-128.png',
     description: (
       <>Build small components that manage their own states as building blocks to build larger applications.</>
     ),
   },
   {
     title: 'Web Components',
-    imageUrl: '/img/monster-3-128.png',
+    imageUrl: 'img/monster-3-128.png',
     description: (
       <>It is based on web components suitable for building loosely coupled components.</>
     ),

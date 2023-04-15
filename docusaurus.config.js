@@ -6,7 +6,7 @@ const config = {
   title: 'MonsterJS',
   tagline: 'Simple but powerful JavaScript framework.',
   url: 'https://monster-js.org',
-  baseUrl: '/',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/monster.svg',
@@ -79,11 +79,11 @@ const config = {
             items: [
               {
                 label: 'Getting started',
-                to: '/docs/category/getting-started',
+                to: 'docs/category/getting-started',
               },
               {
                 label: 'CLI',
-                to: '/docs/category/cli',
+                to: 'docs/category/cli',
               },
             ],
           },
@@ -113,7 +113,7 @@ const config = {
               },
               {
                 label: 'Support Us',
-                to: '/docs/getting-started/what-is-monster-js#support-us',
+                to: 'docs/getting-started/what-is-monster-js#support-us',
               }
             ],
           },

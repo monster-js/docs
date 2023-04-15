@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Quick Start
 
-There are multiple ways to set up a MonsterJS project, but the easiest method is to clone the starter app from [GitHub](https://github.com/monster-js/starter-app). Another option is to use the [CLI](/docs/cli/cli-what-is-cli).
+There are multiple ways to set up a MonsterJS project, but the easiest method is to clone the starter app from [GitHub](https://github.com/monster-js/starter-app). Another option is to use the [CLI](../cli/cli-what-is-cli).
 
 ## Create App
 

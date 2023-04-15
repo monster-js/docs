@@ -210,7 +210,7 @@ In the example above, the component will log a message to the console every time
 
 ## Router Params
 
-The `getParams` functions allows us to retrieve router parameters. More information about these route parameters can be found in the [dynamic route matching](/docs/available-packages/router#dynamic-route-matching) section.
+The `getParams` functions allows us to retrieve router parameters. More information about these route parameters can be found in the [dynamic route matching](#dynamic-route-matching) section.
 
 Example.
 

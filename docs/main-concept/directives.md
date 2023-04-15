@@ -85,7 +85,7 @@ After the view has been initialized, the `elementRef` variable should contain a 
 
 `attr:<attribute name>={<value>}`
 
-This directive allows you to track changes to a component's attributes. You can find more information about the observed attributes in the documentation [here](/docs/main-concept/observed-attributes).
+This directive allows you to track changes to a component's attributes. You can find more information about the observed attributes in the documentation [here](../main-concept/observed-attributes).
 
 Example.
 
@@ -105,7 +105,7 @@ This directive is a built-in directive, we do not need to register any directive
 
 `on-prevent:<event name>={<event handler>}`
 
-This directive is used to attach an event handler to an element. You can find more information about the event handler in the documentation [here](/docs/main-concept/event-handling).
+This directive is used to attach an event handler to an element. You can find more information about the event handler in the documentation [here](../main-concept/event-handling).
 
 Example.
 
@@ -140,7 +140,7 @@ This directives are built-in directives, we do not need to register any directiv
 
 `v:for={<array of values>}`
 
-This directive is used for list rendering. It allows developers to render a list of elements based on a given array of data. You can find more information about the list rendering in the documentation [here](/docs/main-concept/list-rendering).
+This directive is used for list rendering. It allows developers to render a list of elements based on a given array of data. You can find more information about the list rendering in the documentation [here](../main-concept/list-rendering).
 
 Example.
 
@@ -157,7 +157,7 @@ This directives are built-in directives, we do not need to register any directiv
 
 `v:if={<expression>}`
 
-This directive is used to conditionally render an element to the DOM. It will remove the element from the DOM if the value of the directive is false, and append the element if the value is true. You can find more information about the list rendering in the documentation [here](/docs/main-concept/conditional-rendering).
+This directive is used to conditionally render an element to the DOM. It will remove the element from the DOM if the value of the directive is false, and append the element if the value is true. You can find more information about the list rendering in the documentation [here](../main-concept/conditional-rendering).
 
 Example.
 

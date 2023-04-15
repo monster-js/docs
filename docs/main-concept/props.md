@@ -49,7 +49,7 @@ export function Child(props) {
 
 ## On Change Event
 
-We can use the `onPropsChange` hook to monitor changes to props. This hook is triggered whenever there are changes to any of the props on the parent component's side. For more information about this hook, please refer to the [lifecycle hooks](/docs/main-concept/lifecyle-hooks) documentation.
+We can use the `onPropsChange` hook to monitor changes to props. This hook is triggered whenever there are changes to any of the props on the parent component's side. For more information about this hook, please refer to the [lifecycle hooks](../main-concept/lifecyle-hooks) documentation.
 
 Example.
 

@@ -14,7 +14,7 @@ To start the local development server, we can run the following command:
 mn serve
 ```
 
-The command above will start a development server on port 4000 and will use the dev environment variables. For more information about these variables, please refer to the [environment variables](/docs/useful-topics/environment-variables) section in the documentation.
+The command above will start a development server on port 4000 and will use the dev environment variables. For more information about these variables, please refer to the [environment variables](../useful-topics/environment-variables) section in the documentation.
 
 Once the server is running, we can view our project by accessing the local development server at the URL [http://localhost:4000](http://localhost:4000).
 

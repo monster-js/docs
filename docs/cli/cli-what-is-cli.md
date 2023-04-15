@@ -10,6 +10,6 @@ One of the key advantages of using the MonsterJS CLI is its ability to automate 
 
 ## Features
 
-- [Create a Project using CLI](/docs/cli/cli-create-application)
-- [Generate files like components, services, directives and more](/docs/cli/cli-generate-commands)
-- [Useful commands](/docs/cli/cli-useful-commands)
+- [Create a Project using CLI](../cli/cli-create-application)
+- [Generate files like components, services, directives and more](../cli/cli-generate-commands)
+- [Useful commands](../cli/cli-useful-commands)

@@ -63,4 +63,4 @@ export function App() {
 }
 ```
 
-This is an example of two way binding. Please check the [view model directive](/docs/main-concept/directives#view-model) form more information about this directive.
+This is an example of two way binding. Please check the [view model directive](../main-concept/directives#view-model) form more information about this directive.

@@ -24,7 +24,7 @@ function HomepageHeader() {
           </Link>
           <Link
             className="button hero-buttons button--secondary button--lg"
-            to="/docs/getting-started/what-is-monster-js">
+            to="docs/getting-started/what-is-monster-js">
               Get Started
           </Link>
         </div>

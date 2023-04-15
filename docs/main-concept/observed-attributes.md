@@ -189,7 +189,7 @@ observedAttributes(Child, ['name', 'age', 'is-verified-user']);
 
 ## The attributeChanged Hook
 
-This is a hook that runs each time one of the observed attributes is added, removed, or updated. It takes two arguments: the first is the `this` context of the component, and the second is the callback. For more information about this hook, please refer to the [lifecycle hooks](/docs/main-concept/lifecyle-hooks) documentation.
+This is a hook that runs each time one of the observed attributes is added, removed, or updated. It takes two arguments: the first is the `this` context of the component, and the second is the callback. For more information about this hook, please refer to the [lifecycle hooks](../main-concept/lifecyle-hooks) documentation.
 
 Example.
 

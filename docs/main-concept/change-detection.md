@@ -8,7 +8,7 @@ Change detection is the process of synchronizing the data between a component's 
 
 ## Setting a State
 
-We can create a state using the `useState` function. For more information about how to create and use a state, please refer to the documentation on [component states](/docs/main-concept/component-states#component-state).
+We can create a state using the `useState` function. For more information about how to create and use a state, please refer to the documentation on [component states](../main-concept/component-states#component-state).
 
 Example.
 

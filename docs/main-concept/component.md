@@ -67,7 +67,7 @@ import { App } from './app.component';
 
 ## Shadow Dom Component
 
-We can also create a Shadow DOM component to encapsulate our component. To do this, we can use a custom `shadowComponent` function. This function takes three arguments. The first argument is the function component itself, the second argument is an optional component style, and the third argument is an optional Shadow DOM mode (open or closed), which defaults to open if not specified.
+We can also create a Shadow DOM component to encapsulate our component. To do this, we can use a custom `shadowComponent` function. This function takes three arguments. The first argument is the function component itself, the second argument is an optional Shadow DOM mode (`open` or `closed`), which defaults to open if not specified, and the third argument is an optional component style.
 
 Example.
 
@@ -79,7 +79,7 @@ export function Greeting() {
     return <h1>Hello World</h1>
 }
 
-shadowComponent(Greeting, styles, 'closed');
+shadowComponent(Greeting, 'closed', styles);
 ```
 
 ## Web Component Slot
@@ -199,7 +199,45 @@ As long as the custom element is defined we can also use it like the following:
 <button is="app-custom-button"></button>
 ```
 
-Custom element names are prefixed with `app-` when defined.
+Custom element names are prefixed with `app-` when defined and the `custom-button` is the name of the component(`CustomButton`) converted to kebab case. It is also good to set the component selector using `setComponentSelector` function.
+
+## Component Selector
+
+MonsterJS components are web components. If we inspect the element after rendering the component, we can see that it's added to the DOM with the component name converted to kebab case and prefixed with `app-` as the component selector.
+
+Example.
+
+```jsx
+export function CustomButton() {
+    return <div></div>
+}
+```
+
+If we render this component to its parent component, it will look like the following:
+
+```jsx
+<CustomButton />
+```
+
+If we inspect the elements in the DOM tree, we can see that the component is rendered as follows:
+
+```jsx
+<app-custom-button></app-custom-button>
+```
+
+We can also set the component selector using `setComponentSelector`.
+
+Example.
+
+```jsx
+import { setComponentSelector } from '@monster-js/core';
+
+export function CustomButton() {
+    return <div></div>
+}
+
+setComponentSelector(CustomButton, 'my-custom-button');
+```
 
 ## Define Component
 

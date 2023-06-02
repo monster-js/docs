@@ -19,13 +19,21 @@ Running this command will generate the MonsterJS files needed to create an appli
 To run a local development server for our project, we need to open a CLI, change directory to the root of the project, and run the following command:
 
 ```bash
-mn serve
+npm start
 ```
 
-After the command is done, we can now view our application by pointing our browsers to [http://localhost:4000](http://localhost:4000). The port 4000 can be changed by adding a `--port` option to the command.
+or
+
+```bash
+webpack serve
+```
+
+if you have webpack cli installed globally.
+
+After the command is done, we can now view our application by pointing our browsers to [http://localhost:4000](http://localhost:4000). The port 4000 can be changed by adding a `--env port=<port_number>` option to the command.
 
 Example.
 
 ```bash
-mn serve --port 4001
+webpack serve --env port=4001
 ```

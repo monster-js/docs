@@ -4,28 +4,32 @@ sidebar_position: 5
 
 # Build MonsterJS Project
 
-The MonsterJS CLI provides a command `mn build` to compile the project for deployment. By default, the output of this build process is found in the `./build` directory, but it can be changed using the options available when running the CLI command to build the project.
-
-## Build Command
-
-To build the project we can run the following command:
+To build a MonsterJS application, you can run the following command:
 
 ```bash
-mn build
+npm run build
 ```
 
-After running the mn build command, the generated files will be located in the output directory specified by the user.
+Alternatively, if you have `webpack-cli` installed globally, you can also run:
+
+```bash
+webpack --mode production
+```
+
+By default, the output of this build process is found in the `./dist` folder, but it can be changed using the options available when running the CLI command to build the project.
 
 ## Command Options
 
-| Options | Description | Value Type | Default |
-| --- | --- | --- | --- |
-| --env <value\> | Build the project using the specified environment. | string | dev |
-| --mode <value\> | Build the project in 'development', 'production', or 'none' mode. See [webpack mode](https://webpack.js.org/configuration/mode/) for more info about the different modes. This option will determine if the build or serve command will generate a production or development codes. |
-| --output <value\> | The directory where it should output the bundles, assets and other files. | string | dist |
-
-Example.
+You can also pass some configuration options to the `webpack` CLI command, as shown below:
 
 ```bash
-mn build --env prod --output dist
+webpack --env output=./build
 ```
+
+### Available Options
+
+| Options | Description | Value Type | Default |
+| --- | --- | --- | --- |
+| --env environment=<value\> | Build the project using the specified environment. | string | |
+| --env output=<value\> | The directory where it should output the bundles, assets and other files. | string | dist |
+| --mode <value\> | Build the project in 'development', 'production', or 'none' mode. See [webpack mode](https://webpack.js.org/configuration/mode/) for more info about the different modes. This option will determine if the build or serve command will generate a production or development codes. | string | development |

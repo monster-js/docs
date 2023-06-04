@@ -13,7 +13,7 @@ In MonsterJS, we use a built-in dependency injection container to manage and inj
 Before we can use a dependency, we need to register it with the dependency injection container. We can do this by passing the dependencies to the dependency array of the `createDIContainer` function.
 
 ```jsx
-import { createDIContainer } from "framework";
+import { createDIContainer } from "@monster-js/core";
 import { GreetingService } from "./greeting.service";
 
 export const homeDI = createDIContainer('home', [ GreetingService ]);
@@ -65,7 +65,7 @@ The useValue property is used to return a value, instead of a class instance, wh
 Example.
 
 ```jsx
-import { createDIContainer } from "framework";
+import { createDIContainer } from "@monster-js/core";
 import { GreetingService } from "./greeting.service";
 
 export const homeDI = createDIContainer('home', [GreetingService]);
@@ -88,7 +88,7 @@ The useClass property is used to replace a dependency with another class when re
 Example.
 
 ```jsx
-import { createDIContainer } from "framework";
+import { createDIContainer } from "@monster-js/core";
 import { GreetingService } from "./greeting.service";
 
 export const homeDI = createDIContainer('home', [GreetingService]);

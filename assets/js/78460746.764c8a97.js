@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_monster_js_docs=self.webpackChunk_monster_js_docs||[]).push([[868],{1215:t=>{t.exports=JSON.parse('{"title":"Getting Started","slug":"/category/getting-started","permalink":"/docs/docs/category/getting-started","navigation":{"next":{"title":"What is MonsterJS","permalink":"/docs/docs/getting-started/what-is-monster-js"}}}')}}]);

@@ -30,7 +30,7 @@ export function App() {
     return <div>
         <Route
             path="/greeting"
-            component={() => <Greeting />}
+            element={() => <Greeting />}
         />
     </div>
 }
@@ -239,19 +239,19 @@ Here is a table that shows examples of dynamic routes and their corresponding ro
 
 ## Lazy Loading
 
-To load a component on demand, we can use the `lazy` function to create a lazily loaded component.
+To load a component on demand, we can use the `createLazyComponent` function to create a lazily loaded component.
 
 Example.
 
 ```jsx
-import { lazy } from '@monster-js/core';
 import { Route } from '@monster-js/router';
+import { createLazyComponent } from '@monster-js/core';
 
-const LazyGreeting = lazy(() => import('./greeting.component').then(c => c.Greeting));
+const LazyGreeting = createLazyComponent(() => import('./greeting.component').then(c => c.Greeting));
 
 export function App() {
     return <div>
-        <Route path="/" element={<LazyGreeting />} />
+        <Route path="/" element={() => <LazyGreeting />} />
     </div>
 }
 ```

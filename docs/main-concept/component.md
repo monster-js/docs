@@ -170,7 +170,7 @@ Custom elements allow us to define a new type of element. To create a custom ele
 Example.
 
 ```jsx
-import { component, customElement } from '@monster-js/core';
+import { customElement } from '@monster-js/core';
 
 export function CustomButton {
     return <span>I am a button!</span>
@@ -199,7 +199,25 @@ As long as the custom element is defined we can also use it like the following:
 <button is="app-custom-button"></button>
 ```
 
-Custom element names are prefixed with `app-` when defined and the `custom-button` is the name of the component(`CustomButton`) converted to kebab case. It is also good to set the component selector using `setComponentSelector` function.
+Custom element names are prefixed with `app-` when defined and the `custom-button` is the name of the component `CustomButton` converted to kebab case. It is also good to set the component selector using `setComponentSelector` function.
+
+## Custom Element Component Styles
+
+If we want to use styles in our component, we can also use the `component` function before the `customElement` function.
+
+Example.
+
+```jsx
+import styles from './custom-button.component.scss';
+import { component, customElement } from '@monster-js/core';
+
+export function CustomButton {
+    return <span>I am a button!</span>
+}
+
+component(CustomButton, styles);
+customElement(CustomButton, HTMLButtonElement, 'button');
+```
 
 ## Component Selector
 
@@ -252,6 +270,17 @@ import { Greeting } from './greeting.component';
 customElement.define('app-greeting', createComponent(Greeting));
 ```
 
+or we can use the `defineComponent` function provided by the core package.
+
+Example.
+
+```jsx
+import { defineComponent } from '@monster-js/core';
+import { Greeting } from './greeting.component';
+
+defineComponent('app-greeting', Greeting);
+```
+
 :::info
 Components used within a MonsterJS component do not need to be separately defined, as they are automatically recognized within the scope of the MonsterJS component.
 :::
@@ -267,6 +296,19 @@ import { createComponent } from '@monster-js/core';
 import { CustomButton } from './custom-button.component';
 
 customElement.define('app-custom-button', createComponent(CustomButton), {
+    extends: 'button'
+});
+```
+
+or we can use the `defineComponent` function provided by the core package.
+
+Example.
+
+```jsx
+import { defineComponent } from '@monster-js/core';
+import { CustomButton } from './custom-button.component';
+
+defineComponent('app-custom-button', CustomButton, {
     extends: 'button'
 });
 ```

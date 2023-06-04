@@ -6,7 +6,7 @@ const config = {
   title: 'MonsterJS',
   tagline: 'Simple but powerful JavaScript framework.',
   url: 'https://monster-js.org',
-  baseUrl: '/docs/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/monster.svg',

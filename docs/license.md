@@ -8,7 +8,7 @@ sidebar_position: 7
 
 MIT License
 
-Copyright (c) 2022 Darius Bualan Jr.
+Copyright (c) 2023 Darius Bualan Jr.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

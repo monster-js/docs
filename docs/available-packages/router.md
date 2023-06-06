@@ -102,60 +102,91 @@ Example.
 
 Router guard is another way to check whether a component can activate or not. It can also run a block of code before a route can activate or deactivate.
 
-The following code is an example of working router guard code, but it does not yet include any functions.
+The following code is an example of working router guard code.
 
 ```jsx
-import { Guard } from '@monster-js/router';
-
-@Guard
-export class AuthGuard {
+export function authGuard(): Promise<boolean> | boolean {
+    return true;
 }
 ```
 
 ### Can Activate
 
-The `canActivate` method can help us add additional checks to determine if a component is allowed to activate or not.
+The `canActivate` guards can help us add additional checks to determine if a component is allowed to activate or not.
 
 Example.
 
 ```jsx
 import { navigate } from '@monster-js/core';
-import { Guard } from '@monster-js/router';
 import { AuthService } from './auth.service';
+import { authDI } from 'auth.container';
 
-@Guard
-export class AuthGuard {
+export function authGuard(): Promise<boolean> | boolean {
 
-    constructor(private authService: AuthService) {}
-
-    public override canActivate(): Promise<boolean> | boolean {
-        if (this.authService.isLoggedIn) {
-            return true;
-        }
-        navigate('/guest/route');
-        return false;
+    const authService = authDI.inject(AuthService);
+    if (authService.isLoggedIn) {
+        return true;
     }
+
+    navigate('/guest/route');
+    return false;
 }
 ```
 
-### Can Deactivate
-
-The `canDeactivate` method can help us add additional checks to determine if a component is allowed to deactivate or not.
+To use it as `canActivate` guard, you can pass it to the canActivate prop of the `Route` component.
 
 Example.
 
 ```jsx
-import { Guard } from '@monster-js/router';
-import { ChangesService } from './changes.service';
+<Route path="/auth/path" canActivate={[authGuard]} element={...}>
+```
 
-@Guard
-export class ChangesGuard {
+### Can Deactivate
 
-    constructor(private changesService: ChangesService) {}
+The `canDeactivate` guards can help us add additional checks to determine if a component is allowed to deactivate or not.
 
-    public override canDeactivate(): Promise<boolean> | boolean {
-        return !this.changesService.hasChanges();
+Example.
+
+```jsx
+export function confirmationGuard(): Promise<boolean> | boolean {
+    const confirmation = confirm('Are you sure you want to leave this page?');
+    return confirmation;
+}
+```
+
+To use it as `canDeactivate` guard, you can pass it to the canDeactivate prop of the `Route` component.
+
+Example.
+
+```jsx
+<Route path="/auth/path" canDeactivate={[confirmationGuard]} element={...}>
+```
+
+### Route Data
+
+We can also pass data to the route guard by passing it to the `data` prop in the route.
+
+Example.
+
+```jsx
+<Route path="/auth/path" canActivate={[authGuard]} data={{ authenticated: true }} element={...}>
+```
+
+And we can access it inside the route as a function parameter.
+
+Example.
+
+```jsx
+import { navigate } from '@monster-js/core';
+
+export function authGuard(data: any): Promise<boolean> | boolean {
+
+    if (data.authenticated) {
+        return true;
     }
+
+    navigate('/guest/route');
+    return false;
 }
 ```
 

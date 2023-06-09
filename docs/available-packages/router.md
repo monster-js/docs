@@ -239,6 +239,11 @@ export function Greeting() {
 
 In the example above, the component will log a message to the console every time the route changes.
 
+:::info
+Note that `onRouteChange` hook works only to the components used directly as an element in the `<Route />` component.
+To trigger onRouteChange to child components, you need to use event emitters.
+:::
+
 ## Router Params
 
 The `getParams` functions allows us to retrieve router parameters. More information about these route parameters can be found in the [dynamic route matching](#dynamic-route-matching) section.
@@ -250,11 +255,18 @@ import { getParams } from '@monster-js/router';
 
 export function greeting(props) {
 
-    console.log(getParams());
+    const params = getParams(this);
+
+    console.log(params);
 
     return <h1>Greeting</h1>
 }
 ```
+
+:::info
+Note that `getParams` function works only to the components used directly as an element in the `<Route />` component.
+To get the params in child components, we can use the shared state or pass the params using event emitters on route change event.
+:::
 
 ## Dynamic Route Matching
 

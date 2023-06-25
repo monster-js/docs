@@ -43,11 +43,15 @@ The example above demonstrates updating the `counter` state every second using t
 
 ## Shared State
 
-Shared state is a state that can be accessed and updated by multiple components. In MonsterJS, shared state can be created using `createShareState` function. When a value in the shared state is updated, all components that depend on that value will be notified to reflect the updated value.
+Shared state is a state that can be accessed and updated by multiple components.
+In MonsterJS, shared state can be created using `createSharedState` function.
+When a value in the shared state is updated, all components that depend on that value will be notified to reflect the updated value.
 
 ### Create a Shared State
 
-We can create a shared state using the `createSharedState` function. This function accept two arguments, the first is the name of the shared state, the name will be reflected in devTools when inspecting the state, the second argument is the initial value of the state. This function returns an array with two values - the current state value and a function to update the state. We can then use these values inside our components to read or update the shared state.
+We can create a shared state using the `createSharedState` function.
+This function accept one arguments which is the initial value of the state.
+This function returns another function that we can use inside our components.
 
 Example.
 
@@ -57,7 +61,9 @@ import { createSharedState } from '@monster-js/core';
 export const counterState = createSharedState('counter', 100);
 ```
 
-Now, we can import the `counterState` function inside our component. This function accepts two arguments, first is the component's `this` context, and second is an optional parameter which is a callback function that is called when the state is changed. This function returns a getter and setter of the shared state.
+Now, we can import the `counterState` function inside our component. This function accepts two arguments,
+first is the component's `this` context, and second is an optional parameter which is a callback function that is called when the state is changed.
+This function returns a getter and setter of the shared state.
 
 Example.
 
@@ -85,14 +91,3 @@ export function App() {
     return <h1>{counter()}</h1>
 }
 ```
-
-The setter has an optional second parameter that accepts a string which describes the action when using the setter.
-
-Example.
-
-```jsx
-const [counter, setCounter] = counterState(this);
-setCounter(counter() + 1, 'Increment the counter');
-```
-
-This value will be reflected in the devTools.

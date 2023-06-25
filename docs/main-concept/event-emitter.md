@@ -20,7 +20,7 @@ export const routeChangeEvent = createEventEmitter();
 
 Now, you can import the `routeChangeEvent` function into your component.
 This function accepts the component's `this` context as an argument.
-It returns a function to trigger the event and a function to subscribe to the event.
+It returns an object that has `dispatch` and `subscribe` properties used to trigger and listen for events, respectively.
 
 Example:
 
@@ -36,7 +36,7 @@ export function App() {
 
 ## Triggering the Event
 
-To trigger the event, simply call the trigger function returned by the event emitter function.
+To trigger the event, simply call the `dispatch` function returned by the event emitter function.
 
 Example:
 
@@ -45,10 +45,10 @@ import { routeChangeEvent } from './route-change.event';
 
 export function App() {
 
-    const [trigger, subscribe] = routeChangeEvent(this);
+    const routeChange = routeChangeEvent(this);
 
     const triggerEvent = () => {
-        trigger();
+        routeChange.dispatch();
     }
 
     return <button on:click={triggerEvent}>Trigger event</button>
@@ -64,10 +64,10 @@ import { routeChangeEvent } from './route-change.event';
 
 export function App() {
 
-    const [trigger, subscribe] = routeChangeEvent(this);
+    const routeChange = routeChangeEvent(this);
 
     const triggerEvent = () => {
-        trigger('Triggered in app component.');
+        routeChange.dispatch('Triggered in app component.');
     }
 
     return <button on:click={triggerEvent}>Trigger event</button>
@@ -76,7 +76,7 @@ export function App() {
 
 ## Subscribing to the Event
 
-To subscribe to the event, use the subscribe function returned by the event emitter function.
+To subscribe to the event, use the `subscribe` function returned by the event emitter function.
 
 Example:
 
@@ -85,9 +85,9 @@ import { routeChangeEvent } from './route-change.event';
 
 export function App() {
 
-    const [trigger, subscribe] = routeChangeEvent(this);
+    const routeChange = routeChangeEvent(this);
 
-    subscribe(this, () => {
+    routeChange.subscribe(this, () => {
         console.log('The event is triggered.');
     });
 
@@ -95,7 +95,7 @@ export function App() {
 }
 ```
 
-You can also retrieve the data passed by the trigger function within the subscriber.
+You can also retrieve the data passed by the dispatch function within the subscriber.
 
 Example:
 
@@ -104,9 +104,9 @@ import { routeChangeEvent } from './route-change.event';
 
 export function App() {
 
-    const [trigger, subscribe] = routeChangeEvent(this);
+    const routeChange = routeChangeEvent(this);
 
-    subscribe(this, (message) => {
+    routeChange.subscribe(this, (message) => {
         console.log(message);
     });
 
